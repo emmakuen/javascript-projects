@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #62d2da;
+}
+
+
+
+.container {
+    padding: 5%;
+    color: #fff;
+    margin: 1rem;
+    border-radius: 50px;
+    background: #62d2da;
+    box-shadow: 20px 20px 60px #53b3b9,
+        -20px -20px 60px #71f2fb;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+span {
+    font-size: 1.1rem;
+}
+
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 200px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.label {
+    background-color: #75a3a5;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px 0;
+    width: 82px;
+    height: 42px;
+    border: white 2px solid;
+    position: relative;
+}
+
+.toggle:checked+.label {
+    background-color: #e08a91;
+}
+
+.ball {
+    background: white;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    animation: slideOff 0.3s linear forwards;
+}
+
+.toggle:checked+.label .ball {
+    animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(40px) scale(1);
+    }
+}
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(40px) scale(1);
+    }
+
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
